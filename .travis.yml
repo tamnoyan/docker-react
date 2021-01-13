@@ -1,6 +1,7 @@
-language: generic
 # to use docker need sudo permission
 sudo: required
+language: generic
+
 services:
   # install docker into the running container
   - docker
