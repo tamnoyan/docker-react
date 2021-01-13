@@ -1,0 +1,13 @@
+language: generic
+# to use docker need sudo permission
+sudo: required
+services:
+  # install docker into the running container
+  - docker
+
+# run steps/commands before deploy/running tests
+before_install:
+  - docker build -t tamnoyan/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true tamnoyan/docker-react npm run test
